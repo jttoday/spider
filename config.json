@@ -1,0 +1,5 @@
+{
+	"taskdb" : "mysql+taskdb://root:940118@localhost:3306/taskdb",
+	"resultdb": "mysql+resultdb://root:940118@localhost:3306/resultdb",
+	"projectdb": "local+projectdb://scripts"
+}
