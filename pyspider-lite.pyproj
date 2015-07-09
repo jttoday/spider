@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45a33a39-f71e-48ab-a5ec-a7c9925dacf3}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>run.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="docs\imgs\creating_a_project.png" />
+    <Content Include="docs\imgs\css_selector_helper.png" />
+    <Content Include="docs\imgs\demo.png" />
+    <Content Include="docs\imgs\developer-tools-network-filter.png" />
+    <Content Include="docs\imgs\developer-tools-network.png" />
+    <Content Include="docs\imgs\index_page.png" />
+    <Content Include="docs\imgs\inspect_element.png" />
+    <Content Include="docs\imgs\pyspider-arch.png" />
+    <Content Include="docs\imgs\request-headers.png" />
+    <Content Include="docs\imgs\run_one_step.png" />
+    <Content Include="docs\imgs\search-for-request.png" />
+    <Content Include="docs\imgs\tutorial_imdb_front.png" />
+    <Content Include="docs\imgs\twitch.png" />
+    <Content Include="pyspider\fetcher\phantomjs_fetcher.js" />
+    <Content Include="pyspider\webui\static\css_selector_helper.js" />
+    <Content Include="pyspider\webui\static\debug.css" />
+    <Content Include="pyspider\webui\static\debug.js" />
+    <Content Include="pyspider\webui\static\index.css" />
+    <Content Include="pyspider\webui\static\index.js" />
+    <Content Include="pyspider\webui\static\result.css" />
+    <Content Include="pyspider\webui\static\splitter.js" />
+    <Content Include="pyspider\webui\static\task.css" />
+    <Content Include="pyspider\webui\static\tasks.css" />
+    <Content Include="pyspider\webui\templates\debug.html" />
+    <Content Include="pyspider\webui\templates\helper.html" />
+    <Content Include="pyspider\webui\templates\helper.js" />
+    <Content Include="pyspider\webui\templates\index.html" />
+    <Content Include="pyspider\webui\templates\result.html" />
+    <Content Include="pyspider\webui\templates\task.html" />
+    <Content Include="pyspider\webui\templates\tasks.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="tox.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="pyspider\database\basedb.py" />
+    <Compile Include="pyspider\database\base\projectdb.py" />
+    <Compile Include="pyspider\database\base\resultdb.py" />
+    <Compile Include="pyspider\database\base\taskdb.py" />
+    <Compile Include="pyspider\database\base\__init__.py" />
+    <Compile Include="pyspider\database\local\projectdb.py" />
+    <Compile Include="pyspider\database\local\__init__.py" />
+    <Compile Include="pyspider\database\mongodb\mongodbbase.py" />
+    <Compile Include="pyspider\database\mongodb\projectdb.py" />
+    <Compile Include="pyspider\database\mongodb\resultdb.py" />
+    <Compile Include="pyspider\database\mongodb\taskdb.py" />
+    <Compile Include="pyspider\database\mongodb\__init__.py" />
+    <Compile Include="pyspider\database\mysql\mysqlbase.py" />
+    <Compile Include="pyspider\database\mysql\projectdb.py" />
+    <Compile Include="pyspider\database\mysql\resultdb.py" />
+    <Compile Include="pyspider\database\mysql\taskdb.py" />
+    <Compile Include="pyspider\database\mysql\__init__.py" />
+    <Compile Include="pyspider\database\redis\taskdb.py" />
+    <Compile Include="pyspider\database\redis\__init__.py" />
+    <Compile Include="pyspider\database\sqlalchemy\projectdb.py" />
+    <Compile Include="pyspider\database\sqlalchemy\resultdb.py" />
+    <Compile Include="pyspider\database\sqlalchemy\sqlalchemybase.py" />
+    <Compile Include="pyspider\database\sqlalchemy\taskdb.py" />
+    <Compile Include="pyspider\database\sqlalchemy\__init__.py" />
+    <Compile Include="pyspider\database\sqlite\projectdb.py" />
+    <Compile Include="pyspider\database\sqlite\resultdb.py" />
+    <Compile Include="pyspider\database\sqlite\sqlitebase.py" />
+    <Compile Include="pyspider\database\sqlite\taskdb.py" />
+    <Compile Include="pyspider\database\sqlite\__init__.py" />
+    <Compile Include="pyspider\database\__init__.py" />
+    <Compile Include="pyspider\fetcher\cookie_utils.py" />
+    <Compile Include="pyspider\fetcher\tornado_fetcher.py" />
+    <Compile Include="pyspider\fetcher\__init__.py" />
+    <Compile Include="pyspider\libs\base_handler.py" />
+    <Compile Include="pyspider\libs\bench.py" />
+    <Compile Include="pyspider\libs\counter.py" />
+    <Compile Include="pyspider\libs\dataurl.py" />
+    <Compile Include="pyspider\libs\ListIO.py" />
+    <Compile Include="pyspider\libs\log.py" />
+    <Compile Include="pyspider\libs\pprint.py" />
+    <Compile Include="pyspider\libs\response.py" />
+    <Compile Include="pyspider\libs\result_dump.py" />
+    <Compile Include="pyspider\libs\sample_handler.py" />
+    <Compile Include="pyspider\libs\url.py" />
+    <Compile Include="pyspider\libs\utils.py" />
+    <Compile Include="pyspider\libs\__init__.py" />
+    <Compile Include="pyspider\message_queue\beanstalk.py" />
+    <Compile Include="pyspider\message_queue\kombu_queue.py" />
+    <Compile Include="pyspider\message_queue\rabbitmq.py" />
+    <Compile Include="pyspider\message_queue\redis_queue.py" />
+    <Compile Include="pyspider\message_queue\__init__.py" />
+    <Compile Include="pyspider\processor\processor.py" />
+    <Compile Include="pyspider\processor\project_module.py" />
+    <Compile Include="pyspider\processor\__init__.py" />
+    <Compile Include="pyspider\result\result_worker.py" />
+    <Compile Include="pyspider\result\__init__.py" />
+    <Compile Include="pyspider\run.py" />
+    <Compile Include="pyspider\scheduler\scheduler.py" />
+    <Compile Include="pyspider\scheduler\task_queue.py" />
+    <Compile Include="pyspider\scheduler\token_bucket.py" />
+    <Compile Include="pyspider\scheduler\__init__.py" />
+    <Compile Include="pyspider\webui\app.py" />
+    <Compile Include="pyspider\webui\bench_test.py" />
+    <Compile Include="pyspider\webui\debug.py" />
+    <Compile Include="pyspider\webui\index.py" />
+    <Compile Include="pyspider\webui\login.py" />
+    <Compile Include="pyspider\webui\result.py" />
+    <Compile Include="pyspider\webui\task.py" />
+    <Compile Include="pyspider\webui\__init__.py" />
+    <Compile Include="pyspider\__init__.py" />
+    <Compile Include="run.py" />
+    <Compile Include="setup.py" />
+    <Compile Include="tests\data_fetcher_processor_handler.py" />
+    <Compile Include="tests\data_handler.py" />
+    <Compile Include="tests\data_sample_handler.py" />
+    <Compile Include="tests\data_test_webpage.py" />
+    <Compile Include="tests\test_bench.py" />
+    <Compile Include="tests\test_counter.py" />
+    <Compile Include="tests\test_database.py" />
+    <Compile Include="tests\test_fetcher.py" />
+    <Compile Include="tests\test_fetcher_processor.py" />
+    <Compile Include="tests\test_message_queue.py" />
+    <Compile Include="tests\test_processor.py" />
+    <Compile Include="tests\test_response.py" />
+    <Compile Include="tests\test_result_worker.py" />
+    <Compile Include="tests\test_run.py" />
+    <Compile Include="tests\test_scheduler.py" />
+    <Compile Include="tests\test_utils.py" />
+    <Compile Include="tests\test_webui.py" />
+    <Compile Include="tests\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="docs\" />
+    <Folder Include="docs\imgs" />
+    <Folder Include="pyspider" />
+    <Folder Include="pyspider\database" />
+    <Folder Include="pyspider\database\base" />
+    <Folder Include="pyspider\database\local" />
+    <Folder Include="pyspider\database\mongodb" />
+    <Folder Include="pyspider\database\mysql" />
+    <Folder Include="pyspider\database\redis" />
+    <Folder Include="pyspider\database\sqlalchemy" />
+    <Folder Include="pyspider\database\sqlite" />
+    <Folder Include="pyspider\fetcher" />
+    <Folder Include="pyspider\libs" />
+    <Folder Include="pyspider\message_queue" />
+    <Folder Include="pyspider\processor" />
+    <Folder Include="pyspider\result" />
+    <Folder Include="pyspider\scheduler" />
+    <Folder Include="pyspider\webui" />
+    <Folder Include="pyspider\webui\static" />
+    <Folder Include="pyspider\webui\templates" />
+    <Folder Include="tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
