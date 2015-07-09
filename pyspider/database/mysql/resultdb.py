@@ -22,7 +22,7 @@ schema_map = {
        `url` varchar(1024),
        `result` BLOB,
        `updatetime` double(16, 4)
-       ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+       ) ENGINE=MyISAM DEFAULT CHARSET=utf8
    ''',
    'weibo': '''CREATE TABLE %s (
        `taskid` varchar(64) PRIMARY KEY,
@@ -35,7 +35,7 @@ schema_map = {
        `pics` mediumtext,
        `result` BLOB,
        `updatetime` double(16, 4)
-       ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+       ) ENGINE=MyISAM DEFAULT CHARSET=utf8
    ''',
    'taobao': '''CREATE TABLE %s (
        `taskid` varchar(64) PRIMARY KEY,
@@ -50,7 +50,7 @@ schema_map = {
        `detail_url` varchar(1024),
        `result` BLOB,
        `updatetime` double(16, 4)
-       ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+       ) ENGINE=MyISAM DEFAULT CHARSET=utf8
    ''',
    'forum': '''CREATE TABLE %s (
        `taskid` varchar(64) PRIMARY KEY,
@@ -65,14 +65,14 @@ schema_map = {
        `thread_content_qq` BLOB,
        `result` BLOB,
        `updatetime` double(16, 4)
-       ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+       ) ENGINE=MyISAM DEFAULT CHARSET=utf8
    ''',
    'qqinfo': '''CREATE TABLE %s (
        `taskid` varchar(64) PRIMARY KEY,
        `url` varchar(1024),
        `result` BLOB,
        `updatetime` double(16, 4)
-       ) ENGINE=MyISAM DEFAULT CHARSET=latin1
+       ) ENGINE=MyISAM DEFAULT CHARSET=utf8
    ''',
 }
 
@@ -161,31 +161,31 @@ class ResultDB(MySQLMixin, SplitTableMixin, BaseResultDB, BaseDB):
             'default': {
             },
             'taobao': {
-                'title': result.get('title').encode("gbk") if result.get('title') else '',
+                'title': result.get('title').encode("utf8") if result.get('title') else '',
                 'shop_link': result.get('shop_link'),
-                'seller_nick': result.get('seller_nick').encode('gbk') if result.get('seller_nick') else '',
+                'seller_nick': result.get('seller_nick').encode('utf8') if result.get('seller_nick') else '',
                 'view_price': result.get('view_price', ''),
                 'view_sales': result.get('view_sales', 0),
                 'comment_count': result.get('comment_count', 0),
-                'item_loc': result.get('item_loc').encode('gbk') if result.get('item_loc') else '',
+                'item_loc': result.get('item_loc').encode('utf8') if result.get('item_loc') else '',
                 'detail_url': result.get('detail_url', ''),
             },
             'weibo': {
-                'nickname': result.get('nickname').encode('gbk') if result.get('nickname') else '',  
-                'quote_nickname': result.get('quote_nickname').encode('gbk') if result.get('quote_nickname') else '',
-                'quote_content': result.get('quote_content').encode('gbk') if result.get('quote_content') else '',
-                'content': result.get('content').encode('gbk') if result.get('content') else '', 
+                'nickname': result.get('nickname').encode('utf8') if result.get('nickname') else '',  
+                'quote_nickname': result.get('quote_nickname').encode('utf8') if result.get('quote_nickname') else '',
+                'quote_content': result.get('quote_content').encode('utf8') if result.get('quote_content') else '',
+                'content': result.get('content').encode('utf8') if result.get('content') else '', 
                 'href': result.get('href') if result.get('href') else '', 
                 'pics': result.get('pics', ''),
             },
             'forum': {
-                'author': result.get('author').encode('gbk', 'ignore') if result.get('author') else '',  
+                'author': result.get('author').encode('utf8', 'ignore') if result.get('author') else '',  
                 'forum_site_name': result.get('forum_site_name') if result.get('forum_site_name') else '',
                 'forum_site_url': result.get('forum_site_url') if result.get('forum_site_url') else '',
                 'thread_id': result.get('thread_id') if result.get('thread_id') else 0, 
                 'publisher_qq': result.get('publisher_qq') if result.get('publisher_qq') else '', 
-                'thread_content': result.get('thread_content').encode('gbk', 'ignore') if result.get('thread_content') else '', 
-                'title': result.get('title').encode('gbk', 'ignore') if result.get('title') else '', 
+                'thread_content': result.get('thread_content').encode('utf8', 'ignore') if result.get('thread_content') else '', 
+                'title': result.get('title').encode('utf8', 'ignore') if result.get('title') else '', 
                 'thread_content_qq': result.get('thread_content_qq') if result.get('thread_content_qq') else '',
             },
             'qqinfo': {

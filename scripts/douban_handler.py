@@ -11,7 +11,7 @@ class Handler(BaseHandler):
 
     @every(minutes=24 * 60)
     def on_start(self):
-        self.crawl('http://movie.douban.com/tag/dac', callback=self.index_page)
+        self.crawl('http://movie.douban.com/tag', callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):

@@ -204,7 +204,7 @@ def scheduler(ctx, xmlrpc, xmlrpc_host, xmlrpc_port,
 @click.option('--xmlrpc-host', default='0.0.0.0')
 @click.option('--xmlrpc-port', envvar='FETCHER_XMLRPC_PORT', default=24444)
 @click.option('--poolsize', default=100, help="max simultaneous fetches")
-@click.option('--proxy_file', help="proxy host:port")
+@click.option('--proxy_file',default="/home/andy/spider/pyspider-lite/inside_proxy.txt", help="proxy host:port")
 @click.option('--user-agent', help='user agent')
 @click.option('--timeout', help='default fetch timeout')
 @click.option('--fetcher-cls', default='pyspider.fetcher.Fetcher', callback=load_cls,

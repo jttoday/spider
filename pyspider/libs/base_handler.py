@@ -295,8 +295,8 @@ class BaseHandler(object):
         else:
             task['taskid'] = self.get_taskid(task)
 
-        if kwargs:
-            raise TypeError('crawl() got unexpected keyword argument: %s' % kwargs.keys())
+        #if kwargs:
+        #    raise TypeError('crawl() got unexpected keyword argument: %s' % kwargs.keys())
 
         cache_key = "%(project)s:%(taskid)s" % task
         if cache_key not in self._follows_keys:
